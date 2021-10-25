@@ -1,16 +1,26 @@
 {
   "name": "03-bases-node",
-  "version": "1.0.0",
-  "description": "Esta es una aplicacion de linea de comando",
+  "version": "0.0.1",
+  "description": "Tabla de mutiplicar en archivo de texto",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jose Martin",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-m-bernal/multiplicar-node.git"
+  },
+  "keywords": [
+    "Multiplicar"
+  ],
+  "author": "José Martín Bernal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-m-bernal/multiplicar-node/issues"
+  },
+  "homepage": "https://github.com/j-m-bernal/multiplicar-node#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "yargs": "^15.3.1"
-  },
-  "devDependencies": {}
+    "yargs": "^17.2.1"
+  }
 }

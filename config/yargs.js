@@ -1,21 +1,33 @@
-const opts = {
-    base: {
-        demand: true,
-        alias: 'b'
-    },
-    limite: {
-        alias: 'l',
-        default: 10
-    }
-}
-
 const argv = require('yargs')
-    .command('listar', 'Imprime en consola la tabla de multiplicar', opts)
-    .command('crear', 'Crea un archivo de la tabla definida', opts)
-    .help()
-    .argv;
+                        .option('b',{
+                            alias:'base',
+                            type: 'number',
+                            demandOption:true,
+                            description:'Numero base para crera la tabla'
+                        })
+                        .option('l',{
+                            alias:'listar',
+                            default: false,
+                            type: 'boolean',
+                            demandOption:true,
+                            description:"Lista el resultado en consola"
+                        })
+                        .option('h',{
+                            alias:'hasta',
+                            type: 'number',
+                            demandOption:true,
+                            default:10,
+                            description:'Establece el limite de la tabla'
+                        })
+                        .check((argv,options)=>{
+                            if(isNaN(argv.base)){
+                                throw "La base debe ser numerica"
+                            }
+                            if(isNaN(argv.hasta)){
+                                throw "hasta debe ser numerico"
+                            }
+                            return true;     
+                        })
+                        .argv;
 
-
-module.exports = {
-    argv
-}
+module.exports = argv; 
